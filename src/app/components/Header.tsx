@@ -5,14 +5,19 @@ import { useState, useEffect } from 'react';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+      // Close mobile menu when scrolling
+      if (isMobileMenuOpen) {
+        setIsMobileMenuOpen(false);
+      }
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isMobileMenuOpen]);
 
   const navItems = [
     { name: 'Games', href: '#games' },
@@ -66,29 +71,29 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className={`md:hidden flex flex-col space-y-1 transition-colors duration-300 ${
               isScrolled ? 'text-gray-900' : 'text-white'
             }`}
             aria-label="Menu"
           >
-            <span className="w-6 h-0.5 bg-current transition-all duration-300" />
-            <span className="w-6 h-0.5 bg-current transition-all duration-300" />
-            <span className="w-6 h-0.5 bg-current transition-all duration-300" />
+            <span className={`w-6 h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
+            <span className={`w-6 h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : ''}`} />
+            <span className={`w-6 h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`} />
           </button>
         </div>
 
-        {/* Mobile Navigation - You can expand this later */}
-        <div className="md:hidden mt-4 hidden">
-          <div className="flex flex-col space-y-3">
+        {/* Mobile Navigation */}
+        <div className={`md:hidden transition-all duration-300 ease-in-out ${
+          isMobileMenuOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
+        }`}>
+          <div className="px-4 py-4 space-y-3 bg-white/95 backdrop-blur-sm border-t border-gray-200">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className={`text-sm font-medium transition-colors duration-300 ${
-                  isScrolled 
-                    ? 'text-gray-700 hover:text-blue-600' 
-                    : 'text-gray-200 hover:text-white'
-                }`}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block text-gray-700 hover:text-blue-600 font-medium py-2 transition-colors duration-300"
               >
                 {item.name}
               </Link>
