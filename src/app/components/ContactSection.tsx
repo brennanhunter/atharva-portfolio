@@ -40,7 +40,7 @@ const ContactSection = () => {
             <CheckCircle className="w-16 h-16 text-green-600 mx-auto mb-6" />
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Message Sent Successfully!</h2>
             <p className="text-lg text-gray-600 mb-8">
-              Thank you for reaching out. I'll get back to you within 24 hours to discuss how we can work together.
+              Thank you for reaching out. I&apos;ll get back to you within 24 hours to discuss how we can work together.
             </p>
             <button
               onClick={() => setIsSubmitted(false)}
@@ -60,7 +60,7 @@ const ContactSection = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Let's Work Together
+            Let&apos;s Work Together
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Ready to bring quality-focused 3D environment art and technical expertise to your next project. 
@@ -164,7 +164,7 @@ const ContactSection = () => {
             <div className="bg-white rounded-2xl p-8 shadow-lg">
               <h3 className="text-2xl font-bold text-gray-900 mb-2">Start a Conversation</h3>
               <p className="text-gray-600 mb-6">
-                Tell me about your project, team, or opportunity. I'd love to learn how I can contribute.
+                Tell me about your project, team, or opportunity. I&apos;d love to learn how I can contribute.
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -302,8 +302,8 @@ const ContactSection = () => {
           <div className="bg-gradient-to-r from-blue-600 to-teal-600 rounded-2xl p-8 text-white">
             <h3 className="text-2xl font-bold mb-4">Ready to Elevate Your Game Development?</h3>
             <p className="text-lg mb-6 opacity-95">
-              Let's discuss how my QA-focused approach, 3D expertise, and IndieCade experience 
-              can contribute to your team's success.
+              Let&apos;s discuss how my QA-focused approach, 3D expertise, and IndieCade experience 
+              can contribute to your team&apos;s success.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

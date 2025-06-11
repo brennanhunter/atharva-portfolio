@@ -1,12 +1,32 @@
 'use client';
 
-import { useState } from 'react';
 import { ExternalLink, Play, Download, Clock } from 'lucide-react';
 
-const GamesSection = () => {
-  const [hoveredGame, setHoveredGame] = useState<string | null>(null);
+interface Game {
+  id: string;
+  title: string;
+  description: string;
+  role: string;
+  platform: string;
+  engine: string;
+  teamSize: string;
+  status: string;
+  playLink: string;
+  playLinkStatus: 'working' | 'updating' | 'missing';
+  tags: string[];
+  videoType?: 'youtube' | 'local';
+  videoId?: string;
+  videoSrc?: string;
+}
 
-  const featuredGame = {
+interface FeaturedGame extends Game {
+  subtitle: string;
+  videoId: string;
+}
+
+const GamesSection = () => {
+
+  const featuredGame: FeaturedGame = {
     id: 'tale-of-tummbad',
     title: 'A Tale of Tummbad',
     subtitle: 'Commercial Android Game',
@@ -22,7 +42,7 @@ const GamesSection = () => {
     tags: ['Commercial', 'Mobile', 'Narrative', 'Published']
   };
 
-  const otherGames = [
+  const otherGames: Game[] = [
     {
       id: 'daydreams-of-change',
       title: 'Daydreams of Change',
@@ -85,7 +105,7 @@ const GamesSection = () => {
     );
   };
 
-  const getPlayButton = (game: any) => {
+  const getPlayButton = (game: Game | FeaturedGame) => {
     switch (game.playLinkStatus) {
       case 'working':
         return (
@@ -220,8 +240,6 @@ const GamesSection = () => {
             <div
               key={game.id}
               className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105"
-              onMouseEnter={() => setHoveredGame(game.id)}
-              onMouseLeave={() => setHoveredGame(null)}
             >
               {/* Video */}
               <div className="relative bg-black">

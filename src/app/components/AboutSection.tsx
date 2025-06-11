@@ -1,6 +1,6 @@
 'use client';
 
-import { GraduationCap, MapPin, Code, Heart, Target, Coffee, Award, Briefcase } from 'lucide-react';
+import { GraduationCap, MapPin, Heart, Target, Coffee, Award, Briefcase } from 'lucide-react';
 
 const AboutSection = () => {
   return (
@@ -134,10 +134,10 @@ const AboutSection = () => {
                 My Approach to Game Development
               </h3>
               <blockquote className="text-lg text-gray-700 italic leading-relaxed">
-                "My QA background taught me that quality isn't just about visual appeal — it's about creating 
+                &quot;My QA background taught me that quality isn&apos;t just about visual appeal — it&apos;s about creating 
                 experiences that work flawlessly for players. Every environment I build, every asset I model, 
                 combines artistic vision with technical precision. I believe great games are born from the 
-                intersection of creativity and meticulous attention to detail."
+                intersection of creativity and meticulous attention to detail.&quot;
               </blockquote>
             </div>
 
@@ -266,7 +266,7 @@ const AboutSection = () => {
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready for the Next Challenge</h3>
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
               With professional software experience, IndieCade industry recognition, and specialized game development 
-              education, I'm uniquely positioned to contribute to innovative game projects. I bring a quality-focused 
+              education, I&apos;m uniquely positioned to contribute to innovative game projects. I bring a quality-focused 
               mindset, technical precision, and creative vision to every environment and asset I create.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
@@ -280,9 +280,9 @@ const AboutSection = () => {
 
         {/* Call to Action */}
         <div className="text-center">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">Let's Build Quality Games Together</h3>
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">Let&apos;s Build Quality Games Together</h3>
           <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-            I'm actively seeking opportunities to bring my unique combination of professional experience, 
+            I&apos;m actively seeking opportunities to bring my unique combination of professional experience, 
             industry recognition, and technical expertise to innovative game development teams. 
             Ready to contribute from day one.
           </p>

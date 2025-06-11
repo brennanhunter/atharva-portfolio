@@ -113,7 +113,7 @@ const EnvironmentsSection = () => {
 
         {/* Environments Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 mb-16">
-          {environments.map((env, index) => (
+          {environments.map((env) => (
             <div
               key={env.id}
               className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-105"

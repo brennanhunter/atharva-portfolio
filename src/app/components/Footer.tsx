@@ -1,6 +1,6 @@
 'use client';
 
-import { ExternalLink, Mail, LinkedinIcon, Heart } from 'lucide-react';
+import { ExternalLink, Mail, LinkedinIcon} from 'lucide-react';
 
 const Footer = () => {
   return (

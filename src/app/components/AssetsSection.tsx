@@ -338,7 +338,7 @@ const AssetsSection = () => {
         {/* CTA */}
         <div className="text-center">
           <p className="text-gray-600 mb-6">
-            Need custom 3D assets for your project? Let's discuss your requirements.
+            Need custom 3D assets for your project? Let&apos;s discuss your requirements.
           </p>
           <a
             href="#contact"
